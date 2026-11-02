@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>펑펑이떡 체험 활동지</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;padding:22px 12px;background:#fff8eb;color:#493022;font-family:"Malgun Gothic",Apple SD Gothic Neo,system-ui,sans-serif}
+.app{max-width:900px;margin:auto}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:2px;color:#bd8650}
+h1{font-size:clamp(25px,5vw,38px);margin:5px 0;color:#754322}
+.subtitle{color:#a4774e;font-size:14px}
+.sheet{background:#fffdf4;border:2px solid #f5dca0;border-radius:24px;padding:clamp(15px,3vw,28px);box-shadow:0 5px 18px #8c63301a}
+.sheet-head{text-align:center;margin-bottom:18px}
+.emoji{font-size:38px}
+.sheet-head h2{font-size:clamp(24px,4vw,34px);margin:3px;color:#a66a2d}
+.sheet-head p{margin:5px 0;color:#a4774e;font-size:14px;font-weight:700}
+.identity{border:2px dashed #e9b66b;border-radius:14px;background:white;padding:13px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+label{display:block;font-size:13px;font-weight:800;margin-bottom:5px}
+input,select,textarea{width:100%;min-width:0;background:#fff;border:1.5px solid #e7cba8;border-radius:10px;padding:11px;color:#493022;font:inherit;font-size:15px;outline:none}
+input:focus,select:focus,textarea:focus{border-color:#d98bb4;box-shadow:0 0 0 3px #f9dce955}
+textarea{resize:vertical;line-height:1.75;min-height:115px}
+.grade{background:#fff7e6;border-radius:10px;padding:11px;text-align:center;font-weight:900}
+.section{border-radius:18px;padding:15px;margin-top:14px}
+.yellow{background:#fff9e6;border:2px solid #f5d47a}
+.pink{background:#fff2f7;border:2px solid #f5b7d2}
+.green{background:#f6f9e9;border:2px solid #c6dc83}
+.title{font-size:clamp(17px,2.5vw,21px);font-weight:900;margin-bottom:11px}
+.num{display:inline-flex;align-items:center;justify-content:center;background:#e8a6cf;color:white;border-radius:50%;width:30px;height:30px;margin-right:7px}
+.blankrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:16px;font-weight:800;line-height:2.3}
+.blankrow input{width:135px;text-align:center;padding:8px}
+.hint{font-size:12px;color:#846e60;margin:0 0 9px;line-height:1.6}
+.footer{text-align:center;margin-top:16px;color:#a77b4d;font-weight:800;font-size:14px}
+.controls{background:#fffaf2;border:1px solid #eadcc9;border-radius:18px;padding:14px;margin-top:15px}
+.buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+button{border:0;border-radius:12px;padding:13px 9px;font-size:14px;font-weight:900;cursor:pointer}
+button:disabled{opacity:.6;cursor:wait}
+.save{background:#e7f0c9;color:#536c2c}.reset{background:#fce6eb;color:#a34b68}.submit{background:#8eae50;color:white}
+.status{text-align:center;color:#806d59;font-size:12px;margin:11px 0 5px;min-height:18px}
+.note{font-size:12px;color:#8b7766;line-height:1.6;margin:0}
+@media(max-width:600px){body{padding:12px 8px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.blankrow input{width:110px}.sheet{padding:13px}.section{padding:12px}}
+@media print{body{background:white;padding:0}.controls,.top{display:none}.sheet{box-shadow:none}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+ <div><div class="eyebrow">MORAL EDUCATION · COOKING ACTIVITY</div><h1>🍡 펑펑이떡 체험 활동지</h1><div class="subtitle">나만의 체험 기록을 완성해 보세요!</div></div>
+ <div style="font-size:42px">🌽</div>
+</header>
+<main id="worksheet" class="sheet">
+ <div class="sheet-head"><div class="emoji">🍡 🌽 🍡</div><h2>펑펑이떡 체험 활동지</h2><p>직접 만들고, 맛보고, 북한의 생활을 알아봐요!</p></div>
+ <div class="identity">
+  <div class="grid">
+   <div><label>학년</label><div class="grade">1학년</div></div>
+   <div><label for="classNo">반</label><select id="classNo"><option value="">선택</option></select></div>
+   <div><label for="studentNo">번호</label><select id="studentNo"><option value="">선택</option></select></div>
+   <div><label for="studentName">이름</label><input id="studentName" placeholder="이름 입력"></div>
+  </div>
+ </div>
+ <section class="section yellow">
+  <div class="title"><span class="num">1</span>펑펑이떡은 어떤 음식일까요? 🌽</div>
+  <div class="blankrow"><span>(</span><input id="familyBlank" placeholder="빈칸 입력"><span>)과 함께 만들어 먹던 추억의 음식이자,</span></div>
+  <div class="blankrow"><span>먹을 것이 없을 때 간단하게 만들어 먹던</span><input id="foodBlank" placeholder="빈칸 입력"><span>!</span></div>
+  <div style="text-align:right;font-size:30px">🥣 💛</div>
+ </section>
+ <section class="section pink">
+  <div class="title"><span class="num">2</span>만들고 먹어본 후, 어땠나요? 💗</div>
+  <p class="hint">펑펑이떡을 직접 만들고 먹어본 소감을 자유롭게 적어 보세요!</p>
+  <p class="hint">생각해 볼 내용: 만들기 과정 · 맛과 식감 · 모둠 협동 · 새롭게 느낀 점</p>
+  <textarea id="reflection" placeholder="펑펑이떡을 만들어 먹어 보니..."></textarea>
+ </section>
+ <section class="section green">
+  <div class="title"><span class="num" style="background:#8ebc46">3</span>북한 주민의 삶에 대해 알아보아요! 🔍</div>
+  <div style="margin-bottom:16px">
+   <div style="font-weight:900;margin-bottom:8px">① 북한 주민의 삶에 대해 더 궁금한 점을 질문으로 써 보세요!</div>
+   <p class="hint">TIP: 북한 사람들의 생활은 어떨까? 우리와 비슷한 점은? 분단과 평화로운 미래를 위해 무엇을 알아야 할까?</p>
+   <textarea id="question" placeholder="내가 궁금한 것은..."></textarea>
+  </div>
+  <div style="border-top:1px solid #d6dfa9;padding-top:13px">
+   <div style="font-weight:900;margin-bottom:8px">② 북한 주민들의 식생활이나 생활 모습에 대해 알고 있거나 조사한 내용을 간단히 써 보세요!</div>
+   <p class="hint">예: 식량 사정, 음식 문화, 학교생활, 가족, 여가생활, 주거 환경 등</p>
+   <textarea id="research" placeholder="내가 알고 있거나 조사한 내용은..."></textarea>
+   <div style="margin-top:12px"><label for="source">📚 조사 출처 (조사한 경우 작성)</label><input id="source" placeholder="예: 자료명, 사이트 이름, URL 등"></div>
+  </div>
+ </section>
+ <div class="footer">🌽 오늘의 체험을 통해 서로의 삶과 문화를 이해해요! 🍡</div>
+</main>
+<section class="controls">
+ <strong>📌 활동지 관리</strong>
+ <div class="buttons" style="margin-top:11px">
+  <button class="save" id="saveBtn">💾 저장하기</button>
+  <button class="reset" id="resetBtn">↻ 초기화하기</button>
+  <button class="submit" id="submitBtn">📤 제출하기</button>
+ </div>
+ <div class="status" id="status" aria-live="polite">작성한 내용은 저장하기를 눌러 보관할 수 있어요.</div>
+ <p class="note">※ 제출하기를 누르면 작성한 내용이 담긴 PNG 이미지가 다운로드됩니다. 다운로드한 이미지를 패들렛에 올려 주세요.</p>
+</section>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+for(let i=1;i<=8;i++){let o=new Option(i+'반',i);$('classNo').add(o)}
+for(let i=1;i<=27;i++){let o=new Option(i+'번',i);$('studentNo').add(o)}
+const fields=['classNo','studentNo','studentName','familyBlank','foodBlank','reflection','question','research','source'];
+const storageKey='ppeongTteokWorksheet_v1';
+function collect(){return Object.fromEntries(fields.map(id=>[id,$(id).value]))}
+function restore(d){fields.forEach(id=>{if(d[id]!==undefined)$(id).value=d[id]})}
+try{const old=localStorage.getItem(storageKey);if(old){restore(JSON.parse(old));$('status').textContent='이전에 저장한 작성 내용을 불러왔어요.'}}catch(e){}
+$('saveBtn').onclick=()=>{try{localStorage.setItem(storageKey,JSON.stringify(collect()));$('status').textContent='💚 작성 내용이 이 기기에 저장되었어요!'}catch(e){$('status').textContent='저장할 수 없어요. 브라우저 설정을 확인해 주세요.'}};
+$('resetBtn').onclick=()=>{if(!confirm('작성한 내용을 모두 지울까요?'))return;fields.forEach(id=>$(id).value='');localStorage.removeItem(storageKey);$('status').textContent='작성 내용이 초기화되었어요.'};
+$('submitBtn').onclick=async()=>{
+ if(!$('classNo').value||!$('studentNo').value||!$('studentName').value.trim()){alert('반, 번호, 이름을 먼저 입력해 주세요.');return}
+ if(!$('reflection').value.trim()||!$('question').value.trim()||!$('research').value.trim()){if(!confirm('아직 작성하지 않은 문항이 있어요. 지금 이미지로 저장할까요?'))return}
+ const btn=$('submitBtn');btn.disabled=true;btn.textContent='이미지 만드는 중...';
+ try{
+  if(!window.html2canvas){await new Promise((resolve,reject)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';s.onload=resolve;s.onerror=reject;document.head.appendChild(s)})}
+  const canvas=await html2canvas($('worksheet'),{scale:2,backgroundColor:'#fffdf4',logging:false});
+  const link=document.createElement('a');const name=$('studentName').value.trim().replace(/[\\/:*?"<>|]/g,'_');
+  link.download=`펑펑이떡_체험활동지_1-${$('classNo').value}반_${$('studentNo').value}번_${name}.png`;
+  link.href=canvas.toDataURL('image/png');link.click();
+  $('status').textContent='🎉 PNG 이미지가 저장되었어요! 패들렛에 업로드해 주세요.';
+ }catch(err){console.error(err);$('status').textContent='이미지 저장에 실패했어요. 인터넷 연결을 확인하고 다시 시도해 주세요.';alert('이미지 변환에 실패했어요. 인터넷 연결을 확인한 뒤 다시 시도해 주세요.')}
+ finally{btn.disabled=false;btn.textContent='📤 제출하기'}
+};
+</script>
+</body>
+</html>
